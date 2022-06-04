@@ -1,0 +1,13 @@
+{
+    "displayName": "weatherapp",
+    "appName": "weatherapp",
+    "description": "This is a weather app",
+    "lastModified": "2022-06-04T16:21:26.908Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "classic",
+    "templateName": "blank",
+    "createDate": "2022-06-04T16:21:25.820Z",
+    "analyticsId": "34b50239-2343-fa34-f11e-8e9923ab8ad6",
+    "createdStudioVersion": "8.1.1"
+}

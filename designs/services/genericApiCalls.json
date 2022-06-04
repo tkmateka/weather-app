@@ -1,0 +1,105 @@
+[
+    {
+        "id": "sd_xPhagqdpW7oOKXYI",
+        "type": "tab",
+        "createdDate": "2022-06-04T18:41:42.394Z",
+        "label": "genericApiCalls",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "genericApiCalls",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_mmj26JEnwWR2TFGH",
+        "type": "Start",
+        "z": "sd_xPhagqdpW7oOKXYI",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "get weather",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "results",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getWeather",
+        "category": "General",
+        "x": 120,
+        "y": 140,
+        "wires": [
+            [
+                "sd_ZjTEjIArKSq9mYe4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "genericApiCalls"
+    },
+    {
+        "id": "sd_ZjTEjIArKSq9mYe4",
+        "type": "CallSSDApi",
+        "z": "sd_xPhagqdpW7oOKXYI",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "/getWeather",
+        "url": "/getWeather/:city",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.results",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [
+            {
+                "key": "city",
+                "valueType": "bh.input",
+                "value": "body"
+            }
+        ],
+        "inputParams": [
+            "bh.input.body"
+        ],
+        "functionName": "sd_ZjTEjIArKSq9mYe4",
+        "category": "HTTP",
+        "x": 225,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

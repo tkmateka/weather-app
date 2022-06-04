@@ -1,0 +1,223 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_tTd1wyb1YtSjyiZ4",
+        "type": "tab",
+        "createdDate": "2022-06-04T16:30:25.980Z",
+        "label": "testing",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "testing",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_r4M0Pp2jfj4M2ETq",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_tTd1wyb1YtSjyiZ4",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/getWeather/:city",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/getWeather/:city": {
+                "get": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [
+                        {
+                            "in": "path",
+                            "name": "city",
+                            "description": "City name from user",
+                            "required": true
+                        }
+                    ],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "city",
+                    "desc": "City name from user",
+                    "type": "path",
+                    "required": true,
+                    "rowId": "sd_qo45C2kokYAfYlbP",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "sd_98jXLW26v9qU6Pt1"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "testing",
+        "functionName": "sd_r4M0Pp2jfj4M2ETq"
+    },
+    {
+        "id": "sd_44Jk32hqeLZBIXqq",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_tTd1wyb1YtSjyiZ4",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_44Jk32hqeLZBIXqq",
+        "category": "HTTP",
+        "x": 545,
+        "y": 160,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_98jXLW26v9qU6Pt1",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_tTd1wyb1YtSjyiZ4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.url = `${bh.system.environment.weatherUrl}${bh.input.params.city}&appid=${bh.system.environment.apiKey}&units=metric`;",
+        "functionName": "sd_98jXLW26v9qU6Pt1",
+        "category": "Function",
+        "x": 265,
+        "y": 160,
+        "wires": [
+            [
+                "sd_HtLjLqgGl3PifRhF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_HtLjLqgGl3PifRhF",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_tTd1wyb1YtSjyiZ4",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.input.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "useAuthTypeMappingObj": {},
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_HtLjLqgGl3PifRhF",
+        "category": "HTTP",
+        "x": 385,
+        "y": 160,
+        "wires": [
+            [
+                "sd_44Jk32hqeLZBIXqq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

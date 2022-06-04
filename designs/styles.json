@@ -1,0 +1,22 @@
+{
+    "classes": [
+        "lightRed",
+        "font7em",
+        "font2em",
+        "paddingTop1em",
+        "width97",
+        "gradient",
+        "weatherContainer",
+        "backgroundImage",
+        "contentContainer",
+        "noMargin",
+        "width50px",
+        "width80px",
+        "tab",
+        "mat-tab-label",
+        "mat-tab-group",
+        "mat-primary",
+        "mat-ink-bar",
+        "mat-tab-nav-bar"
+    ]
+}

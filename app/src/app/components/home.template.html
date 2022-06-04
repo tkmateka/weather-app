@@ -1,0 +1,68 @@
+<div fxLayout="row wrap" class="gradient" fxLayoutAlign="center center" [fxShow]="true" fxFill>
+  <div fxLayout="column wrap" class="weatherContainer" fxFlex="70" fxLayoutAlign="center center" [fxShow]="true" fxFlex.sm="90" fxFlex.xs="100"><img imgSrc="/Web/Images/background-image.jpeg" class="backgroundImage">
+    <div fxLayout="column wrap" class="contentContainer" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.xs="100" ngClass.xs="width97">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <h1 class="noMargin">{{page.weatherData.name}}</h1>
+            <p class="noMargin">{{page.today | date: &apos;longDate&apos;}}</p>
+          </div><img imgSrc="/Web/Images/cloudy.png" class="width80px">
+          <h2 class="noMargin">
+            {{page.weatherData.weather[0].description}}
+          </h2>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <p class="noMargin font7em">{{page.weatherData.main.temp | number: &apos;1.0-0&apos;}}<span>&#xB0;</span></p>
+            <p class="noMargin font2em">{{page.weatherData.main.temp_max | number: &apos;1.0-0&apos;}}<span>&#xB0;</span> / <span class="lightRed">{{page.weatherData.main.temp_min | number: &apos;1.0-0&apos;}}<span>&#xB0;</span></span></p>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-tab-group mat-align-tabs="start" class="tab">
+          <mat-tab label="Hourly">
+            <div fxLayout="row wrap" class="paddingTop1em" fxLayoutAlign="space-between stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="19" fxLayoutAlign="center center" [fxShow]="true" fxFlex.xs="30">
+                <p class="noMargin">
+                  Main</p><img imgSrc="/Web/Images/cloudy.png" class="width50px">
+                <p class="noMargin">
+                  {{page.weatherData.weather[0].main}}
+                </p>
+              </div>
+              <div fxLayout="column wrap" fxFlex="19" fxLayoutAlign="center center" [fxShow]="true" fxFlex.xs="30">
+                <p class="noMargin">
+                  Feels Like</p><img imgSrc="/Web/Images/cloudy.png" class="width50px">
+                <p class="noMargin">
+                  {{page.weatherData.main.feels_like | number: &apos;1.0-0&apos;}}<span>&#xB0;</span>
+                </p>
+              </div>
+              <div fxLayout="column wrap" fxFlex="19" fxLayoutAlign="center center" [fxShow]="true" fxFlex.xs="30">
+                <p class="noMargin">
+                  Humidity</p><img imgSrc="/Web/Images/cloudy.png" class="width50px">
+                <p class="noMargin">
+                  {{page.weatherData.main.humidity | number: &apos;1.0-0&apos;}}<span>&#xB0;</span>
+                </p>
+              </div>
+              <div fxLayout="column wrap" fxFlex="19" fxLayoutAlign="center center" [fxShow]="true" fxFlex.xs="30">
+                <p class="noMargin">
+                  Pressure</p><img imgSrc="/Web/Images/cloudy.png" class="width50px">
+                <p class="noMargin">
+                  {{page.weatherData.main.pressure | number: &apos;1.0-0&apos;}}
+                </p>
+              </div>
+              <div fxLayout="column wrap" fxFlex="19" fxLayoutAlign="center center" [fxShow]="true" fxFlex.xs="30">
+                <p class="noMargin">
+                  W/Speed</p><img imgSrc="/Web/Images/cloudy.png" class="width50px">
+                <p class="noMargin">
+                  {{page.weatherData.wind.speed}}Km/h
+                </p>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Daily"></mat-tab>
+          <mat-tab label="Details"></mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

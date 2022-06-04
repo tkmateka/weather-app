@@ -1,0 +1,79 @@
+/*Importing default angular material css theme. */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "nDefaults.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap');
+
+$lightBlue: #7e98c9;
+$lightRed: #e7c1c0;
+$white: #fff;
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.lightRed {
+    color: $lightRed;
+}
+
+.font7em {
+    font-size: 7em;
+    line-height: 1;
+}
+
+.font2em {
+    font-size: 2em;
+}
+
+.paddingTop1em {
+    padding-top: 1em;
+}
+
+.width97 {
+    width: 97% !important;
+}
+
+p {
+    font-weight: 200;
+}
+
+.gradient {
+  background-image: linear-gradient($lightBlue, $lightRed);
+}
+.weatherContainer {
+    position: relative;
+    padding: 2em 0;
+    .backgroundImage {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .contentContainer {
+        width: 80%;
+        color: $white;
+        z-index: 1;
+    }
+}
+.noMargin {
+    margin: 0;
+}
+.width50px {
+    width: 50px;
+}
+.width80px {
+    width: 80px;
+}
+.tab {
+    width: 100%;
+    .mat-tab-label {
+        color: $white;
+        min-width: 20%;
+    }
+    .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+        background-color: $white !important;
+    }
+}
